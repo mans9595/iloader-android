@@ -49,7 +49,8 @@ jobs:
         run: python3 scripts/patch_android_project.py
 
       - name: Build the APK
-        run: bun tauri android build --apk --target aarch64 --ci
+        # x86_64 as well, so the APK also runs on emulators (and the smoke test below).
+        run: bun tauri android build --apk --target aarch64 --target x86_64 --ci
 
       # Reusing one signing key lets a new build install over the previous one.
       - name: Restore the signing key
@@ -80,3 +81,37 @@ jobs:
           name: side-installer-apk
           path: side-installer.apk
           if-no-files-found: error
+
+  # Installs and launches the APK on an emulator. It cannot test the iPhone side.
+  emulator-test:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: side-installer-apk
+
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Smoke test on the emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          target: google_apis
+          arch: x86_64
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -no-snapshot
+          script: bash scripts/emulator_smoke_test.sh side-installer.apk
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: emulator-smoke-test
+          path: smoke-test
