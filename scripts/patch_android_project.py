@@ -2,7 +2,7 @@
 """Adds USB host support to the Android project that `tauri android init` generates.
 
 The generated project (src-tauri/gen/android) is not committed, so CI runs this after
-`tauri android init` to install our MainActivity and the USB bits of the manifest.
+`tauri android init` to install our MainActivity, the USB bits of the manifest and the launcher icons.
 """
 
 import pathlib
@@ -13,7 +13,7 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OVERLAY = ROOT / "android-overlay"
 APP_MAIN = ROOT / "src-tauri" / "gen" / "android" / "app" / "src" / "main"
-EXPECTED_PACKAGE = "com.mans.iloaderandroid"
+EXPECTED_PACKAGE = "com.mans.sideinstaller"
 
 
 def fail(message: str) -> None:
@@ -61,6 +61,18 @@ def patch_manifest() -> None:
     print(f"patched {manifest.relative_to(ROOT)}")
 
 
+def install_icons() -> None:
+    """Copies our launcher icons over the ones the project template ships with."""
+    source = ROOT / "src-tauri" / "icons" / "android"
+    res = APP_MAIN / "res"
+    for path in source.rglob("*"):
+        if path.is_file():
+            target = res / path.relative_to(source)
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(path, target)
+    print(f"installed launcher icons into {res.relative_to(ROOT)}")
+
+
 def install_device_filter() -> None:
     xml_dir = APP_MAIN / "res" / "xml"
     xml_dir.mkdir(parents=True, exist_ok=True)
@@ -74,3 +86,4 @@ if __name__ == "__main__":
     patch_main_activity()
     patch_manifest()
     install_device_filter()
+    install_icons()

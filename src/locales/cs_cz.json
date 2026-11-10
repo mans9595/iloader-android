@@ -44,7 +44,7 @@
     "must_be_logged_in": "Musíte být přihlášeni!",
     "must_select_device": "Musíte vybrat zařízení!",
     "ipa_files": "Soubory IPA",
-    "logo_alt": "logo iLoader"
+    "logo_alt": "logo Side Installer"
   },
   "apple_id": {
     "title": "Apple ID",
@@ -75,7 +75,7 @@
     "valid_6digit": "Zadejte platný 6místný kód.",
     "submit": "Odeslat",
     "max_certs_title": "Dosaženo maxima certifikátů",
-    "max_certs_desc": "iLoader odvolá vaše stávající certifikáty a vygeneruje nový.",
+    "max_certs_desc": "Side Installer odvolá vaše stávající certifikáty a vygeneruje nový.",
     "hide_certificate_list": "Skrýt seznam certifikátů",
     "choose_what_to_revoke": "Vyberte, co chcete odvolat",
     "continue": "Pokračovat"

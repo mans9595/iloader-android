@@ -1,12 +1,22 @@
-# iloader for Android (unofficial)
+# Side Installer
 
-An unofficial Android port of [iloader](https://github.com/nab138/iloader) by nab138
-(official site: <https://iloader.app>). It is not affiliated with or endorsed by the
-iloader project.
+Install SideStore on an iPhone or iPad straight from an Android phone — no computer needed.
 
-Plug an iPhone or iPad into an Android phone with a data cable, sign in with an Apple ID,
-and install SideStore or LiveContainer+SideStore — no computer needed. The anisette server
-can be chosen in the app's settings, including a custom one.
+Plug the iPhone into the Android phone with a data cable, sign in with an Apple ID, and
+Side Installer downloads SideStore (or LiveContainer+SideStore), signs it, installs it and
+puts the pairing file in place. The anisette server can be chosen in the app's settings,
+including a custom one.
+
+Side Installer is an unofficial Android port of [iloader](https://github.com/nab138/iloader)
+by nab138. It is not affiliated with or endorsed by the iloader project.
+
+## How to use
+
+1. Install the APK on the Android phone (allow installing from unknown sources).
+2. Connect the iPhone with a cable that carries data: USB-C to Lightning, or USB-C to USB-C.
+3. Allow Side Installer to access the USB device when Android asks.
+4. Unlock the iPhone and tap **Trust** when it asks whether to trust this device.
+5. Sign in with your Apple ID and choose **Install SideStore**.
 
 ## How it differs from iloader
 
@@ -26,17 +36,20 @@ each time the app starts.
 
 ## Building
 
-Every push to `main` builds an APK with GitHub Actions; download it from the run's
-artifacts. Locally: `bun install`, `bun tauri android init`,
-`python3 scripts/patch_android_project.py`, `bun tauri android build --apk --target aarch64`.
+Every push to `main` and every pull request builds an APK with GitHub Actions; download it
+from the run's artifacts (`side-installer-apk`). Locally: `bun install`,
+`bun tauri android init`, `python3 scripts/patch_android_project.py`,
+`bun tauri android build --apk --target aarch64`.
+
+The icons are generated from `src/side-installer.svg` with `python3 scripts/make_icons.py`.
 
 ## Status
 
 Experimental. The code was written with AI assistance and has had little testing on real
-hardware. Requirements: Android 7+ with USB host (OTG) support and a cable that carries
-data (USB-C to Lightning, or USB-C to USB-C).
+hardware. Requirements: Android 7+ with USB host (OTG) support, 64-bit ARM (arm64-v8a).
 
 ## Licenses
 
-iloader and isideload are MIT licensed, see `LICENSE` and `vendor/isideload/LICENSE`.
-The iloader name and artwork are covered by `LICENSE-BRANDING`.
+Side Installer is based on iloader and isideload, both MIT licensed: see `LICENSE` and
+`vendor/isideload/LICENSE`. It does not use the iloader name or artwork as its own branding
+(see `LICENSE-BRANDING`).

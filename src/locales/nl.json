@@ -44,7 +44,7 @@
     "must_be_logged_in": "Je moet ingelogd zijn!",
     "must_select_device": "Je moet een apparaat selecteren!",
     "ipa_files": "IPA Bestanden",
-    "logo_alt": "iloader logo"
+    "logo_alt": "Side Installer logo"
   },
   "apple_id": {
     "title": "Apple ID",
@@ -75,7 +75,7 @@
     "valid_6digit": "Voer een geldige 6-cijferige code in.",
     "submit": "Verzenden",
     "max_certs_title": "Maximum aantal certificaten bereikt",
-    "max_certs_desc": "iloader zal je bestaande certificaten intrekken en een nieuw certificaat genereren.",
+    "max_certs_desc": "Side Installer zal je bestaande certificaten intrekken en een nieuw certificaat genereren.",
     "hide_certificate_list": "Verberg certificaatlijst",
     "choose_what_to_revoke": "Kies welke certificaten je wilt intrekken",
     "continue": "Doorgaan",
@@ -197,7 +197,7 @@
     "stored_rppairing_deleted_success": "Opgeslagen koppeling succesvol verwijderd!",
     "failed_delete_stored_rppairing": "Kon opgeslagen koppeling niet verwijderen",
     "dont_use_keyring": "Sleutelhanger niet gebruiken",
-    "dont_use_keyring_message": "Het opslaan van koppelingsbestanden, de Anisette-status en certificaten op de harde schijf maakt iloader kwetsbaarder. Gebruik deze optie alleen als de standaard opslag in de sleutelhanger niet werkt en je de risico's begrijpt."
+    "dont_use_keyring_message": "Het opslaan van koppelingsbestanden, de Anisette-status en certificaten op de harde schijf maakt Side Installer kwetsbaarder. Gebruik deze optie alleen als de standaard opslag in de sleutelhanger niet werkt en je de risico's begrijpt."
   },
   "dialog": {
     "confirm": "Bevestigen",
@@ -266,7 +266,7 @@
         "Probeer de app met verhoogde bevoegdheden uit te voeren (als beheerder/root)."
       ],
       "filesystem": [
-        "Zorg ervoor dat iloader toegang heeft tot het lezen en schrijven van bestanden op je systeem."
+        "Zorg ervoor dat Side Installer toegang heeft tot het lezen en schrijven van bestanden op je systeem."
       ],
       "not_enough_app_ids": [
         "Je hebt niet genoeg App IDs beschikbaar om deze app te installeren.",

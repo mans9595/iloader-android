@@ -3,6 +3,7 @@ name: Android APK
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 concurrency:
@@ -55,7 +56,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .signing
-          key: apk-signing-key-v1
+          key: side-installer-signing-key-v1
 
       - name: Sign the APK
         run: |
@@ -66,16 +67,16 @@ jobs:
           mkdir -p .signing
           if [ ! -f .signing/release.jks ]; then
             keytool -genkeypair -keystore .signing/release.jks -storepass android -keypass android \
-              -alias iloader -keyalg RSA -keysize 2048 -validity 10000 \
-              -dname "CN=iloader Android (unofficial build)"
+              -alias sideinstaller -keyalg RSA -keysize 2048 -validity 10000 \
+              -dname "CN=Side Installer"
           fi
           "$build_tools/zipalign" -f -p 4 "$unsigned" "$RUNNER_TEMP/aligned.apk"
           "$build_tools/apksigner" sign --ks .signing/release.jks --ks-pass pass:android \
-            --out iloader-android.apk "$RUNNER_TEMP/aligned.apk"
-          "$build_tools/apksigner" verify iloader-android.apk
+            --out side-installer.apk "$RUNNER_TEMP/aligned.apk"
+          "$build_tools/apksigner" verify side-installer.apk
 
       - uses: actions/upload-artifact@v4
         with:
-          name: iloader-android-apk
-          path: iloader-android.apk
+          name: side-installer-apk
+          path: side-installer.apk
           if-no-files-found: error

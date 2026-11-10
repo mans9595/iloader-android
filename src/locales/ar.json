@@ -44,7 +44,7 @@
     "must_be_logged_in": "عليك تسجيل الدخول",
     "must_select_device": "عليك اختيار جهاز",
     "ipa_files": "IPA ملفات",
-    "logo_alt": "iLoader أيقونة"
+    "logo_alt": "Side Installer أيقونة"
   },
   "apple_id": {
     "title": "معرف آبل",
@@ -75,7 +75,7 @@
     "valid_6digit": "يرجى ادخال الرمز الصحيح من 6 خانات",
     "submit": "ارسال",
     "max_certs_title": "تم الوصول للحد الأقصى من الشهادات",
-    "max_certs_desc": "سيحذف شهادتك ويقوم بإنتاج شهادة جديدة iLoader",
+    "max_certs_desc": "سيحذف شهادتك ويقوم بإنتاج شهادة جديدة Side Installer",
     "hide_certificate_list": "اخفاء قائمة الشهادات",
     "choose_what_to_revoke": "اختر الشهادة التي تريد حذفها",
     "continue": "استمر",
@@ -197,7 +197,7 @@
     "stored_rppairing_deleted_success": "!تم حذف ملف الإقتران المحفوظ",
     "failed_delete_stored_rppairing": "فشل حذف ملف الإقتران المحفوظ",
     "dont_use_keyring": "keyring لا تستعمل تشفير حلقة المفاتيح",
-    "dont_use_keyring_message": "لا يعمل وأنت على دراية بالمخاطر keyring أقل أمانً عبر تخزينه لملفات الإقتران، حالة سيرفير أنيسيت وشهاداتك على القرص المحلي لجهازك الحالي. قم بتفعيل هذا الإعداد فقط في حال أن تشفير حلقة المفاتيح iLoader هذا الإجراء يجعل"
+    "dont_use_keyring_message": "لا يعمل وأنت على دراية بالمخاطر keyring أقل أمانً عبر تخزينه لملفات الإقتران، حالة سيرفير أنيسيت وشهاداتك على القرص المحلي لجهازك الحالي. قم بتفعيل هذا الإعداد فقط في حال أن تشفير حلقة المفاتيح Side Installer هذا الإجراء يجعل"
   },
   "dialog": {
     "confirm": "تأكيد",

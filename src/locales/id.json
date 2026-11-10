@@ -44,7 +44,7 @@
     "must_be_logged_in": "Anda harus masuk terlebih dahulu!",
     "must_select_device": "Anda harus memilih perangkat!",
     "ipa_files": "Berkas IPA",
-    "logo_alt": "logo iloader"
+    "logo_alt": "logo Side Installer"
   },
   "apple_id": {
     "title": "Apple ID",
@@ -75,7 +75,7 @@
     "valid_6digit": "Harap masukkan kode 6 digit yang valid.",
     "submit": "Kirim",
     "max_certs_title": "Sertifikat maksimum tercapai",
-    "max_certs_desc": "iloader akan mencabut sertifikat Anda yang ada dan membuat yang baru.",
+    "max_certs_desc": "Side Installer akan mencabut sertifikat Anda yang ada dan membuat yang baru.",
     "hide_certificate_list": "Sembunyikan daftar sertifikat",
     "choose_what_to_revoke": "Pilih apa yang akan dicabut",
     "continue": "Lanjutkan",
@@ -197,7 +197,7 @@
     "stored_rppairing_deleted_success": "Pairing tersimpan berhasil dihapus!",
     "failed_delete_stored_rppairing": "Gagal menghapus pairing tersimpan",
     "dont_use_keyring": "Jangan gunakan keyring",
-    "dont_use_keyring_message": "Ini membuat iloader kurang aman dengan menyimpan berkas pairing, state anisette, dan sertifikat di disk. Aktifkan ini hanya jika penyimpanan keyring default tidak berfungsi dan Anda memahami risikonya."
+    "dont_use_keyring_message": "Ini membuat Side Installer kurang aman dengan menyimpan berkas pairing, state anisette, dan sertifikat di disk. Aktifkan ini hanya jika penyimpanan keyring default tidak berfungsi dan Anda memahami risikonya."
   },
   "dialog": {
     "confirm": "Konfirmasi",
@@ -262,7 +262,7 @@
         "Coba jalankan aplikasi dengan izin yang ditinggikan (sebagai administrator/root)."
       ],
       "filesystem": [
-        "Pastikan iloader memiliki izin untuk membaca dan menulis berkas di sistem Anda."
+        "Pastikan Side Installer memiliki izin untuk membaca dan menulis berkas di sistem Anda."
       ],
       "not_enough_app_ids": [
         "Anda tidak memiliki cukup ID Aplikasi yang tersedia untuk memasang aplikasi ini.",

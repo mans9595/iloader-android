@@ -44,7 +44,7 @@
     "must_be_logged_in": "សូមបញ្ចូលចូលគណនី!",
     "must_select_device": "សូមជ្រើសរើសឧបករណ៍!",
     "ipa_files": "ឯកសារ IPA",
-    "logo_alt": "រូបសញ្ញា iloader"
+    "logo_alt": "រូបសញ្ញា Side Installer"
   },
   "apple_id": {
     "title": "Apple ID",
@@ -75,7 +75,7 @@
     "valid_6digit": "សូមបញ្ចូលកូដ 6 ខ្ទង់ត្រឹមត្រូវ",
     "submit": "បញ្ជូន",
     "max_certs_title": "ឈានដល់ចំនួនវិញ្ញាបនបត្រអតិបរមា",
-    "max_certs_desc": "iloader នឹងលុបវិញ្ញាបនបត្រចាស់ ហើយបង្កើតថ្មីមួយ",
+    "max_certs_desc": "Side Installer នឹងលុបវិញ្ញាបនបត្រចាស់ ហើយបង្កើតថ្មីមួយ",
     "hide_certificate_list": "លាក់បញ្ជីវិញ្ញាបនបត្រ",
     "choose_what_to_revoke": "ជ្រើសរើសអ្វីត្រូវលុប",
     "continue": "បន្ត",
@@ -197,7 +197,7 @@
     "stored_rppairing_deleted_success": "ការលុប pairing បានជោគជ័យ!",
     "failed_delete_stored_rppairing": "ការលុប pairing បរាជ័យ",
     "dont_use_keyring": "កុំប្រើ keyring",
-    "dont_use_keyring_message": "វាធ្វើឱ្យ iloader មិនសុវត្ថិភាព ដោយរក្សាទុកទិន្នន័យលើ disk។ ប្រើតែបើចាំបាច់។"
+    "dont_use_keyring_message": "វាធ្វើឱ្យ Side Installer មិនសុវត្ថិភាព ដោយរក្សាទុកទិន្នន័យលើ disk។ ប្រើតែបើចាំបាច់។"
   },
   "dialog": {
     "confirm": "បញ្ជាក់",
@@ -262,7 +262,7 @@
         "សូមសាកល្បងដំណើរការកម្មវិធីជាមួយសិទ្ធិ (ជា administrator/root)."
       ],
       "filesystem": [
-        "សូមប្រាកដថា iloader មានសិទ្ធិអាន និងសរសេរឯកសារ។"
+        "សូមប្រាកដថា Side Installer មានសិទ្ធិអាន និងសរសេរឯកសារ។"
       ],
       "not_enough_app_ids": [
         "អ្នកមិនមាន App IDs គ្រប់គ្រាន់សម្រាប់ដំឡើងកម្មវិធីនេះ។",

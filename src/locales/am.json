@@ -44,7 +44,7 @@
     "must_be_logged_in": "Դուք պետք է մուտք գործած լինեք համակարգ։",
     "must_select_device": "Դուք պետք է ընտրեք հետեւյալ սարքը։",
     "ipa_files": "IPA Ֆայլեր",
-    "logo_alt": "iloader տարբերանշան"
+    "logo_alt": "Side Installer տարբերանշան"
   },
   "apple_id": {
     "title": "Apple ID",
@@ -75,7 +75,7 @@
     "valid_6digit": "Խնդրում ենք մուտքագրել 6-նիշանոց կոդը։",
     "submit": "Ուղարկել",
     "max_certs_title": "Սերտիֆիկատների առավելագույն քանակը լրացել է",
-    "max_certs_desc": "iloader-ը կչեղարկի ձեր առկա սերտիֆիկատները եւ կստեղծի նորը։",
+    "max_certs_desc": "Side Installer-ը կչեղարկի ձեր առկա սերտիֆիկատները եւ կստեղծի նորը։",
     "hide_certificate_list": "Թաքցնել սերտիֆիկատների ցանկը",
     "choose_what_to_revoke": "Ընտրեք, թե ինչը չեղարկել",
     "continue": "Շարունակել"

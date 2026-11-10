@@ -44,7 +44,7 @@
     "must_be_logged_in": "Oturum açmış olmalısınız!",
     "must_select_device": "Bir aygıt seçmelisiniz!",
     "ipa_files": "iPA Dosyaları",
-    "logo_alt": "iloader logosu"
+    "logo_alt": "Side Installer logosu"
   },
   "apple_id": {
     "title": "Apple Kimliği",
@@ -75,7 +75,7 @@
     "valid_6digit": "Lütfen geçerli 6 haneli bir kod girin.",
     "submit": "Gönder",
     "max_certs_title": "Maksimum sertifika sınırına ulaşıldı",
-    "max_certs_desc": "iloader mevcut sertifikalarınızı iptal edip yeni bir tane oluşturacak.",
+    "max_certs_desc": "Side Installer mevcut sertifikalarınızı iptal edip yeni bir tane oluşturacak.",
     "hide_certificate_list": "Sertifika listesini gizle",
     "choose_what_to_revoke": "İptal edilecek sertifikayı seçin",
     "continue": "Devam Et",
@@ -197,7 +197,7 @@
     "stored_rppairing_deleted_success": "Kayıtlı eşleştirme başarıyla silindi!",
     "failed_delete_stored_rppairing": "Kayıtlı eşleştirme silinemedi",
     "dont_use_keyring": "Anahtar Zinciri'ni kullanma",
-    "dont_use_keyring_message": "Bu seçenek eşleştirme dosyalarını, anisette verilerini ve sertifikaları doğrudan diskte saklayarak iloader'ı daha az güvenli hâle getirir. Bunu yalnızca varsayılan anahtar zinciri depolaması çalışmıyorsa ve risklerin farkındaysanız etkinleştirin."
+    "dont_use_keyring_message": "Bu seçenek eşleştirme dosyalarını, anisette verilerini ve sertifikaları doğrudan diskte saklayarak Side Installer'ı daha az güvenli hâle getirir. Bunu yalnızca varsayılan anahtar zinciri depolaması çalışmıyorsa ve risklerin farkındaysanız etkinleştirin."
   },
   "dialog": {
     "confirm": "Onayla",
@@ -266,7 +266,7 @@
         "Uygulamayı yetkili izinlerle (yönetici/root olarak) açmayı deneyin."
       ],
       "filesystem": [
-        "iloader'ın sisteminizdeki dosyaları okuma ve yazma erişimine sahip olduğundan emin olun."
+        "Side Installer'ın sisteminizdeki dosyaları okuma ve yazma erişimine sahip olduğundan emin olun."
       ],
       "not_enough_app_ids": [
         "Bu uygulamayı yüklemek için kullanımda olan yeterli App ID'niz yok.",

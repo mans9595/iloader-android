@@ -44,7 +44,7 @@
     "must_be_logged_in": "ログインが必要です！",
     "must_select_device": "デバイスを選択してください！",
     "ipa_files": "IPAファイル",
-    "logo_alt": "iloader ロゴ"
+    "logo_alt": "Side Installer ロゴ"
   },
   "apple_id": {
     "title": "Apple ID",
@@ -75,7 +75,7 @@
     "valid_6digit": "有効な6桁のコードを入力してください。",
     "submit": "送信",
     "max_certs_title": "証明書の上限に達しました",
-    "max_certs_desc": "iloaderは既存の証明書を無効化（Revoke）し、新しいものを生成します。",
+    "max_certs_desc": "Side Installerは既存の証明書を無効化（Revoke）し、新しいものを生成します。",
     "hide_certificate_list": "証明書リストを隠す",
     "choose_what_to_revoke": "無効化するものを選択",
     "continue": "続行",
@@ -197,7 +197,7 @@
     "stored_rppairing_deleted_success": "保存済みのペアリングファイルが正常に削除されました！",
     "failed_delete_stored_rppairing": "保存済みのペアリングファイルの削除に失敗しました",
     "dont_use_keyring": "キーチェーンを使わない",
-    "dont_use_keyring_message": "この設定を有効にするとペアリングファイル、Anisetteの状態、証明書をディスク上に保存するようになるため、iloaderの安全性が低下します。デフォルトのキーチェーン保存が機能せず、リスクを理解している場合にのみ有効にしてください。"
+    "dont_use_keyring_message": "この設定を有効にするとペアリングファイル、Anisetteの状態、証明書をディスク上に保存するようになるため、Side Installerの安全性が低下します。デフォルトのキーチェーン保存が機能せず、リスクを理解している場合にのみ有効にしてください。"
   },
   "dialog": {
     "confirm": "確定",
@@ -266,7 +266,7 @@
         "アプリを管理者/root権限で実行してみてください。"
       ],
       "filesystem": [
-        "iloaderがシステム上のファイルを読み書きする権限を持っているか確認してください。"
+        "Side Installerがシステム上のファイルを読み書きする権限を持っているか確認してください。"
       ],
       "not_enough_app_ids": [
         "このアプリをインストールするのに十分なApp IDがありません。",

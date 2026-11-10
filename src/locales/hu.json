@@ -44,7 +44,7 @@
     "must_be_logged_in": "Be kell jelentkezned!",
     "must_select_device": "Ki kell választanod egy eszközt!",
     "ipa_files": "IPA Fájlok",
-    "logo_alt": "iloader logó"
+    "logo_alt": "Side Installer logó"
   },
   "apple_id": {
     "title": "Apple ID",
@@ -75,7 +75,7 @@
     "valid_6digit": "Írj be egy érvényes hitelesítő kódot.",
     "submit": "Beküldés",
     "max_certs_title": "Maximum tanusítvány elérve",
-    "max_certs_desc": "Az iloader visszavonja a meglévő tanúsítványokat, és újat állít ki..",
+    "max_certs_desc": "Az Side Installer visszavonja a meglévő tanúsítványokat, és újat állít ki..",
     "hide_certificate_list": "Tanusítványlista elrejtése",
     "choose_what_to_revoke": "Jelöld ki mit vonjunk vissza",
     "continue": "Folytatás",
@@ -197,7 +197,7 @@
     "stored_rppairing_deleted_success": "Tárolt párosítófáljok törölve!",
     "failed_delete_stored_rppairing": "Nem sikerült törölni a tárolt párosítófájlokat",
     "dont_use_keyring": "Ne használjon keyringet",
-    "dont_use_keyring_message": "Ezáltal az iloader kevésbé biztonságos lesz, mivel a párosítási fájlokat, az Anisette állapotát és a tanúsítványokat a merevlemezen tárolja. Ezt a beállítást csak akkor kapcsolja be, ha az alapértelmezett kulcstartó-tárolás nem működik, és tisztában van a kockázatokkal."
+    "dont_use_keyring_message": "Ezáltal az Side Installer kevésbé biztonságos lesz, mivel a párosítási fájlokat, az Anisette állapotát és a tanúsítványokat a merevlemezen tárolja. Ezt a beállítást csak akkor kapcsolja be, ha az alapértelmezett kulcstartó-tárolás nem működik, és tisztában van a kockázatokkal."
   },
   "dialog": {
     "confirm": "Megerősítés",
@@ -262,7 +262,7 @@
         "Próbáld meg az appott nagyobb jogosultsággal megnyitni (adminisztrátor/root)."
       ],
       "filesystem": [
-        "Nézd meg, hogy az iloadernek van-e jogosultsága írás/olvasáshoz a rendszereden."
+        "Nézd meg, hogy az Side Installernek van-e jogosultsága írás/olvasáshoz a rendszereden."
       ],
       "not_enough_app_ids": [
         "Nincs elég app id a fiókodon, hogy telepítsd ezt az alkalmazást.",

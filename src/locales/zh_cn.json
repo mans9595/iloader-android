@@ -44,7 +44,7 @@
     "must_be_logged_in": "您必须登录！",
     "must_select_device": "您必须选择一台设备！",
     "ipa_files": "IPA 文件",
-    "logo_alt": "iloader 标志"
+    "logo_alt": "Side Installer 标志"
   },
   "apple_id": {
     "title": "Apple ID",
@@ -75,7 +75,7 @@
     "valid_6digit": "请输入有效的 6 位数字验证码。",
     "submit": "提交",
     "max_certs_title": "已达到证书数量上限",
-    "max_certs_desc": "iloader 将撤销您现有的证书并生成一个新的。",
+    "max_certs_desc": "Side Installer 将撤销您现有的证书并生成一个新的。",
     "hide_certificate_list": "隐藏证书列表",
     "choose_what_to_revoke": "选择要撤销的内容",
     "continue": "继续"
@@ -186,7 +186,7 @@
     "error": "错误",
     "language_hint": "您可以<translation>点击这里</translation>帮助我们改进翻译。",
     "dont_use_keyring": "不使用钥匙串",
-    "dont_use_keyring_message": "勾选此项会让 iloader 将配对文件、anisette 状态和相关证书直接储存在磁盘内，从而使系统更不安全。只有当钥匙串无法正常储存且您充分了解此项的风险时可考虑勾选此项。"
+    "dont_use_keyring_message": "勾选此项会让 Side Installer 将配对文件、anisette 状态和相关证书直接储存在磁盘内，从而使系统更不安全。只有当钥匙串无法正常储存且您充分了解此项的风险时可考虑勾选此项。"
   },
   "dialog": {
     "confirm": "确认",

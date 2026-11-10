@@ -277,7 +277,7 @@ async fn login(
     // TODO: Team Selection
 
     let sideloader = SideloaderBuilder::new(dev_session, email.to_lowercase())
-        .machine_name("iloader".into())
+        .machine_name("SideInstaller".into())
         .storage(create_sideloading_storage(app)?)
         .extensions_behavior(ExtensionsBehaviorSelection::Fixed(
             ExtensionsBehavior::ReuseMain,
