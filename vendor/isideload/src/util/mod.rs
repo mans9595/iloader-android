@@ -2,6 +2,8 @@ pub mod callbacks;
 pub mod device;
 #[cfg(feature = "fs-storage")]
 pub mod fs_storage;
+#[cfg(not(feature = "wasm"))]
+pub mod http;
 #[cfg(feature = "keyring-storage")]
 pub mod keyring_storage;
 pub mod plist;

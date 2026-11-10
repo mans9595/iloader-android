@@ -135,7 +135,31 @@ pub fn invalidate_account(sideloader_state: State<'_, SideloaderMutex>) {
 }
 
 #[tauri::command]
-pub fn reset_anisette_state() -> Result<bool, AppError> {
+#[cfg_attr(not(target_os = "android"), allow(unused_variables))]
+pub fn reset_anisette_state(handle: AppHandle) -> Result<bool, AppError> {
+    // Android has no keyring, so the anisette state lives in the app's data directory.
+    #[cfg(target_os = "android")]
+    {
+        let path = tauri::Manager::path(&handle)
+            .app_data_dir()
+            .map_err(|e| AppError::Misc(format!("Failed to get app data directory: {:?}", e)))?
+            .join(isideload::anisette::remote_v3::ANISETTE_STATE_KEY);
+        return match std::fs::remove_file(path) {
+            Ok(()) => Ok(true),
+            Err(e) if e.kind() == std::io::ErrorKind::NotFound => Ok(false),
+            Err(e) => Err(AppError::Storage(
+                "Failed to delete anisette state".into(),
+                e.to_string(),
+            )),
+        };
+    }
+
+    #[cfg(not(target_os = "android"))]
+    reset_anisette_state_keyring()
+}
+
+#[cfg(not(target_os = "android"))]
+fn reset_anisette_state_keyring() -> Result<bool, AppError> {
     let state_entry = Entry::new("iloader", "anisette_state").map_err(|e| {
         AppError::KeyringWithMessage(
             "Failed to create keyring entry for anisette".into(),

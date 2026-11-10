@@ -70,6 +70,10 @@ async fn generate_lockdown_plist(
     provider: &dyn IdeviceProvider,
     usbmuxd: &mut UsbmuxdConnection,
 ) -> Result<plist::Value, AppError> {
+    // Desktop systems pair through their system usbmuxd; on Android that is our job.
+    #[cfg(target_os = "android")]
+    ensure_paired(device, provider, usbmuxd).await?;
+
     let mut pairing_file = usbmuxd.get_pair_record(&device.udid).await.map_err(|e| {
         AppError::LockdownPairing(
             "Failed to get pairing record for device".into(),
@@ -106,6 +110,70 @@ async fn generate_lockdown_plist(
             e.to_string(),
         )
     })
+}
+
+/// Makes sure a working lockdown pair record for `device` is stored, pairing if needed.
+///
+/// Pairing shows the "Trust This Computer?" prompt on the iPhone and waits for the answer.
+#[cfg(target_os = "android")]
+async fn ensure_paired(
+    device: &DeviceInfo,
+    provider: &dyn IdeviceProvider,
+    usbmuxd: &mut UsbmuxdConnection,
+) -> Result<(), AppError> {
+    if let Ok(existing) = usbmuxd.get_pair_record(&device.udid).await
+        && let Ok(mut lc) = LockdownClient::connect(provider).await
+    {
+        match lc.start_session(&existing).await {
+            Ok(_) => return Ok(()),
+            Err(e) => warn!("Stored pair record was rejected, pairing again: {e}"),
+        }
+    }
+
+    info!(
+        "Pairing with {}, waiting for Trust on the device",
+        device.name
+    );
+    let buid = usbmuxd.get_buid().await.map_err(|e| {
+        AppError::LockdownPairing("Failed to read system BUID".into(), e.to_string())
+    })?;
+    let host_id = uuid::Uuid::new_v4().to_string().to_uppercase();
+
+    // A locked device refuses to pair until it is unlocked, so keep asking for a while.
+    let mut attempts = 0;
+    let mut pairing_file = loop {
+        let mut lc = LockdownClient::connect(provider).await.map_err(|e| {
+            AppError::DeviceComsWithMessage("Failed to connect to lockdown".into(), e.to_string())
+        })?;
+        match lc
+            .pair(host_id.clone(), buid.clone(), Some("iloader"))
+            .await
+        {
+            Ok(p) => break p,
+            Err(IdeviceError::PasswordProtected) if attempts < 120 => {
+                attempts += 1;
+                tokio::time::sleep(std::time::Duration::from_secs(1)).await;
+            }
+            Err(e) => {
+                return Err(AppError::LockdownPairing(
+                    "Failed to pair with device".into(),
+                    e.to_string(),
+                ));
+            }
+        }
+    };
+
+    pairing_file.udid = Some(device.udid.clone());
+    let serialized = pairing_file.serialize().map_err(|e| {
+        AppError::LockdownPairing("Failed to serialize pairing file".into(), e.to_string())
+    })?;
+    usbmuxd
+        .save_pair_record(&device.udid, serialized)
+        .await
+        .map_err(|e| {
+            AppError::LockdownPairing("Failed to store pairing record".into(), e.to_string())
+        })?;
+    Ok(())
 }
 
 async fn generate_rppairing_plist(

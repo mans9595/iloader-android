@@ -185,7 +185,12 @@ pub async fn install_sidestore_operation(
 }
 
 pub async fn download(url: impl AsRef<str>, dest: &PathBuf) -> Result<(), AppError> {
-    let response = reqwest::get(url.as_ref())
+    let client = isideload::util::http::client_builder(Vec::new())
+        .build()
+        .map_err(|e| AppError::Download(e.to_string()))?;
+    let response = client
+        .get(url.as_ref())
+        .send()
         .await
         .map_err(|e| AppError::Download(e.to_string()))?;
     if !response.status().is_success() {

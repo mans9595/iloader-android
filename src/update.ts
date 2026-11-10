@@ -5,6 +5,8 @@ import { toast } from "sonner";
 import i18n from "./i18next";
 
 export async function checkForUpdates() {
+  // The updater plugin only exists in desktop builds; on Android there is nothing to check.
+  if (/Android/i.test(navigator.userAgent)) return;
   const update = await check();
   if (update) {
     if (

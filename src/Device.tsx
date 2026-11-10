@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import "./Device.css";
 import { invoke } from "@tauri-apps/api/core";
+import { listen } from "@tauri-apps/api/event";
 import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
 import { Modal } from "./components/Modal";
@@ -157,6 +158,18 @@ export const Device = ({
   }, [setDevices, selectDevice, t]);
   useEffect(() => {
     loadDevices();
+  }, [loadDevices]);
+
+  // The Android build reports when the USB link to the iPhone comes up or fails.
+  useEffect(() => {
+    const unlisten = listen<number>("usb-changed", (event) => {
+      if (event.payload === 2 || event.payload === 3) {
+        loadDevices();
+      }
+    });
+    return () => {
+      unlisten.then((fn) => fn());
+    };
   }, [loadDevices]);
 
   useEffect(() => {

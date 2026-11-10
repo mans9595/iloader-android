@@ -8,6 +8,8 @@ mod sideload;
 mod pairing;
 #[macro_use]
 mod secure_storage;
+#[cfg(target_os = "android")]
+mod android_usbmuxd;
 mod error;
 mod logging;
 mod operation;
@@ -32,9 +34,17 @@ use tracing_subscriber::{Layer, Registry, fmt, layer::SubscriberExt, util::Subsc
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
-    tauri::Builder::default()
-        .plugin(tauri_plugin_process::init())
-        .plugin(tauri_plugin_updater::Builder::new().build())
+    // On mobile there is no `main`, so process-wide setup has to happen here.
+    let _ = rustls::crypto::ring::default_provider().install_default();
+    if let Err(e) = isideload::init() {
+        eprintln!("Failed to initialize error reporting: {e}");
+    }
+
+    let builder = tauri::Builder::default().plugin(tauri_plugin_process::init());
+    #[cfg(desktop)]
+    let builder = builder.plugin(tauri_plugin_updater::Builder::new().build());
+
+    builder
         .plugin(tauri_plugin_opener::init())
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_store::Builder::new().build())
@@ -98,6 +108,14 @@ pub fn run() {
                 );
             }));
 
+            #[cfg(target_os = "android")]
+            android_usbmuxd::start(
+                app.handle().clone(),
+                app.path()
+                    .app_data_dir()
+                    .expect("failed to get app data dir"),
+            );
+
             app.manage(DeviceInfoMutex::new(None));
             app.manage(SideloaderMutex::new(None));
             app.manage(PairingCancelToken::new(None));
@@ -129,4 +147,44 @@ pub fn run() {
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
+}
+
+/// JNI entry points called from `MainActivity.kt`, which owns Android's USB permission flow.
+#[cfg(target_os = "android")]
+mod android_jni {
+    use jni::{
+        JNIEnv,
+        objects::{JObject, JString},
+        sys::jint,
+    };
+
+    use crate::android_usbmuxd;
+
+    #[unsafe(no_mangle)]
+    pub extern "system" fn Java_com_mans_iloaderandroid_MainActivity_nativeUsbAttached<'local>(
+        mut env: JNIEnv<'local>,
+        _this: JObject<'local>,
+        fd: jint,
+        serial: JString<'local>,
+        product_id: jint,
+    ) {
+        let serial: String = env.get_string(&serial).map(Into::into).unwrap_or_default();
+        android_usbmuxd::usb_attached(fd, serial, product_id as u16);
+    }
+
+    #[unsafe(no_mangle)]
+    pub extern "system" fn Java_com_mans_iloaderandroid_MainActivity_nativeUsbDetached<'local>(
+        _env: JNIEnv<'local>,
+        _this: JObject<'local>,
+    ) {
+        android_usbmuxd::usb_detached();
+    }
+
+    #[unsafe(no_mangle)]
+    pub extern "system" fn Java_com_mans_iloaderandroid_MainActivity_nativeUsbState<'local>(
+        _env: JNIEnv<'local>,
+        _this: JObject<'local>,
+    ) -> jint {
+        android_usbmuxd::usb_state() as jint
+    }
 }

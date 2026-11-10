@@ -68,19 +68,30 @@ impl RemoteV3AnisetteProvider {
         Ok(self)
     }
 
+    fn base_client_builder() -> ClientBuilder {
+        #[cfg(not(feature = "wasm"))]
+        {
+            crate::util::http::client_builder(Vec::new())
+        }
+        #[cfg(feature = "wasm")]
+        {
+            ClientBuilder::new()
+        }
+    }
+
     fn build_reqwest_client(
         websocket_proxy: Option<String>,
     ) -> Result<reqwest_middleware::ClientWithMiddleware, Report> {
         if let Some(websocket_proxy) = websocket_proxy {
             use crate::auth::middleware::WasmProxyMiddleware;
 
-            let client = ClientBuilder::new().build()?;
+            let client = Self::base_client_builder().build()?;
 
             Ok(MwClientBuilder::new(client)
                 .with(WasmProxyMiddleware::new(websocket_proxy))
                 .build())
         } else {
-            let client = ClientBuilder::new().build()?;
+            let client = Self::base_client_builder().build()?;
 
             Ok(MwClientBuilder::new(client).build())
         }

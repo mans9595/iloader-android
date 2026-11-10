@@ -8,7 +8,6 @@ edition = "2024"
 repository = "https://github.com/nab138/isideload"
 documentation = "https://docs.rs/isideload"
 keywords = ["ios", "sideload"]
-readme = "../README.md"
 
 [features]
 default = ["install", "keyring-storage", "tokio-mt"]
@@ -70,6 +69,10 @@ apple-codesign-quick = "0.1.0"
 # Using native-tls avoids the issue.
 [target.'cfg(windows)'.dependencies]
 reqwest = { version = "0.13.2", default-features = false, features = ["json", "gzip", "native-tls", "http2", "charset", "system-proxy"] }
+
+# The Android build verifies TLS against compiled-in Mozilla roots, see `util::http`.
+[target.'cfg(target_os = "android")'.dependencies]
+webpki-root-certs = "1"
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
 getrandom_02 = { package = "getrandom", version = "0.2", default-features = false, features = [

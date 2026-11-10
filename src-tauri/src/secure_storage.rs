@@ -30,11 +30,21 @@ pub fn keyring_available() -> bool {
 }
 
 fn check_keyring_available() -> bool {
-    let entry = keyring::Entry::new("iloader", "test");
-    if let Ok(entry) = entry {
-        return entry.set_password("test").is_ok() && entry.get_password().is_ok();
+    // There is no keyring backend for Android: the keyring crate would silently fall back
+    // to a mock store that forgets everything, so report it as unavailable instead.
+    #[cfg(target_os = "android")]
+    {
+        false
     }
-    false
+
+    #[cfg(not(target_os = "android"))]
+    {
+        let entry = keyring::Entry::new("iloader", "test");
+        if let Ok(entry) = entry {
+            return entry.set_password("test").is_ok() && entry.get_password().is_ok();
+        }
+        false
+    }
 }
 
 pub fn create_sideloading_storage(

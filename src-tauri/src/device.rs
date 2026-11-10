@@ -40,15 +40,18 @@ pub async fn list_devices() -> Result<Vec<Result<DeviceInfo, AppError>>, AppErro
         AppError::Usbmuxd("Failed to list devices from usbmuxd".into(), e.to_string())
     })?;
     if devs.is_empty() {
+        // On Android we are the USB stack, so we know why nothing showed up.
+        #[cfg(target_os = "android")]
+        if let Some(reason) = crate::android_usbmuxd::last_error() {
+            return Err(AppError::Usbmuxd(
+                "Could not connect to the iPhone over USB".into(),
+                reason,
+            ));
+        }
         return Ok(vec![]);
     }
 
-    let usbmuxd_addr = UsbmuxdAddr::from_env_var().map_err(|e| {
-        AppError::Usbmuxd(
-            "Invalid usbmuxd address from environment".into(),
-            e.to_string(),
-        )
-    })?;
+    let usbmuxd_addr = usbmuxd_addr()?;
 
     let device_info_futures: Vec<_> = devs
         .iter()
@@ -171,10 +174,42 @@ pub async fn cancel_pairing(cancel_state: State<'_, PairingCancelToken>) -> Resu
     Ok(())
 }
 
+/// Where usbmuxd lives. On Android that is our own in-process implementation.
+pub fn usbmuxd_addr() -> Result<UsbmuxdAddr, AppError> {
+    #[cfg(target_os = "android")]
+    {
+        crate::android_usbmuxd::addr().ok_or_else(|| {
+            AppError::Usbmuxd(
+                "Failed to connect to usbmuxd".into(),
+                "The built-in USB service did not start".into(),
+            )
+        })
+    }
+    #[cfg(not(target_os = "android"))]
+    {
+        UsbmuxdAddr::from_env_var().map_err(|e| {
+            AppError::Usbmuxd(
+                "Invalid usbmuxd address from environment".into(),
+                e.to_string(),
+            )
+        })
+    }
+}
+
 pub async fn get_usbmuxd() -> Result<UsbmuxdConnection, AppError> {
-    UsbmuxdConnection::default()
-        .await
-        .map_err(|e| AppError::Usbmuxd("Failed to connect to usbmuxd".into(), e.to_string()))
+    #[cfg(target_os = "android")]
+    {
+        usbmuxd_addr()?
+            .connect(0)
+            .await
+            .map_err(|e| AppError::Usbmuxd("Failed to connect to usbmuxd".into(), e.to_string()))
+    }
+    #[cfg(not(target_os = "android"))]
+    {
+        UsbmuxdConnection::default()
+            .await
+            .map_err(|e| AppError::Usbmuxd("Failed to connect to usbmuxd".into(), e.to_string()))
+    }
 }
 
 pub async fn get_provider(device_info: &DeviceInfo) -> Result<UsbmuxdProvider, AppError> {
@@ -192,6 +227,6 @@ pub async fn get_provider_from_connection(
             AppError::DeviceComsWithMessage("Failed to get device".into(), e.to_string())
         })?;
 
-    let provider = device.to_provider(UsbmuxdAddr::from_env_var().unwrap(), "iloader");
+    let provider = device.to_provider(usbmuxd_addr()?, "iloader");
     Ok(provider)
 }

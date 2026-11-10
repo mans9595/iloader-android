@@ -22,21 +22,23 @@ tauri = { version = "2", features = ["devtools"] }
 tauri-plugin-opener = "2"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
-idevice = { version = "0.1.68", features = ["usbmuxd", "house_arrest", "afc", "core_device_proxy", "remote_pairing", "tcp", "tunnel_tcp_stack", "xpc", "rsd", "pair"] }
-isideload = { version = "0.5.2", features = ["fs-storage"] } # , path = "../../isideload/isideload" } #, git = "https://github.com/nab138/isideload", package = "isideload", branch = "apple-codesign-quick" }
+# ring instead of the default aws-lc: it cross-compiles to Android with just the NDK.
+idevice = { version = "0.1.68", default-features = false, features = ["ring", "usbmuxd", "house_arrest", "afc", "core_device_proxy", "remote_pairing", "tcp", "tunnel_tcp_stack", "xpc", "rsd", "pair"] }
+# Vendored copy with Android TLS handling, see vendor/isideload/src/util/http.rs.
+isideload = { path = "../vendor/isideload", features = ["fs-storage"] }
 keyring = { version = "3.6.3", features = ["apple-native", "windows-native", "linux-native-sync-persistent"] }
 tauri-plugin-store = "2"
 futures = "0.3.31"
 once_cell = "1.21.3"
 tauri-plugin-dialog = "2"
-reqwest = "0.13.2"
-tokio = "1.49.0"
+reqwest = { version = "0.13.2", default-features = false, features = ["rustls-no-provider", "http2", "charset", "system-proxy"] }
+tokio = { version = "1.49.0", features = ["rt", "rt-multi-thread", "net", "io-util", "sync", "time", "macros", "fs"] }
 tauri-plugin-process = "2"
 chrono = "0.4"
 tracing-subscriber = "0.3.22"
 tracing = "0.1.44"
 tracing-appender = "0.2"
-rustls = "0.23.36"
+rustls = { version = "0.23.36", default-features = false, features = ["ring", "std", "tls12", "logging"] }
 plist = "1.8.0"
 plist-macro = "0.1.6"
 tokio-util = "0.7.18"
@@ -47,3 +49,8 @@ uuid = { version = "1", features = ["v4"] }
 
 [target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
 tauri-plugin-updater = "2"
+
+[target.'cfg(target_os = "android")'.dependencies]
+# Pinned to a known commit: the in-process usbmuxd (src/android_usbmuxd.rs) was written against this API.
+nusb = { git = "https://github.com/kevinmehall/nusb", rev = "c46ccd0183844b6299b5354a4a13d6837d5fcf63" }
+jni = "0.21"
