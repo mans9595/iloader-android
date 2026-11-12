@@ -10,10 +10,6 @@ including a custom one.
 Side Installer is an unofficial Android port of [iloader](https://github.com/nab138/iloader)
 by nab138. It is not affiliated with or endorsed by the iloader project.
 
-## Download
-
-Get `side-installer.apk` from the [latest release](https://github.com/mans9595/iloader-android/releases/latest).
-
 ## How to use
 
 1. Install the APK on the Android phone (allow installing from unknown sources).
