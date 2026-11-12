@@ -146,7 +146,7 @@ async fn ensure_paired(
             AppError::DeviceComsWithMessage("Failed to connect to lockdown".into(), e.to_string())
         })?;
         match lc
-            .pair(host_id.clone(), buid.clone(), Some("iloader"))
+            .pair(host_id.clone(), buid.clone(), Some("Side Installer"))
             .await
         {
             Ok(p) => break p,
@@ -190,7 +190,7 @@ async fn generate_rppairing_plist(
 
 fn new_host_label() -> String {
     let id = uuid::Uuid::new_v4().simple().to_string();
-    format!("iloader-{}", &id[..6])
+    format!("sideinstaller-{}", &id[..6])
 }
 
 fn host_label(app: &AppHandle, udid: &str) -> Result<String, AppError> {

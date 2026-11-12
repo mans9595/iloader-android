@@ -44,7 +44,7 @@
     "must_be_logged_in": "로그인이 필요합니다!",
     "must_select_device": "기기를 선택해야 합니다!",
     "ipa_files": "IPA 파일",
-    "logo_alt": "iloader 로고"
+    "logo_alt": "Side Installer 로고"
   },
   "apple_id": {
     "title": "Apple 계정",
@@ -197,7 +197,7 @@
     "stored_rppairing_deleted_success": "성공적으로 저장된 페어링을 삭제했어요!",
     "failed_delete_stored_rppairing": "저장된 페어링을 삭제 실패",
     "dont_use_keyring": "키링 사용하지 않기",
-    "dont_use_keyring_message": "이로 인해 페어링 파일, Anisette 상태 및 인증서가 디스크에 저장되어 iloader의 보안이 저하됩니다. 기본 키링 저장 기능이 작동하지 않고 관련 위험을 충분히 이해한 경우에만 이 기능을 활성화하세요."    
+    "dont_use_keyring_message": "이로 인해 페어링 파일, Anisette 상태 및 인증서가 디스크에 저장되어 Side Installer의 보안이 저하됩니다. 기본 키링 저장 기능이 작동하지 않고 관련 위험을 충분히 이해한 경우에만 이 기능을 활성화하세요."    
   },
   "dialog": {
     "confirm": "확인",
@@ -262,7 +262,7 @@
         "상위 권한으로 앱을 실행해 보세요 (관리자 권한으로 실행/root)."
       ],
       "filesystem": [
-        "시스템에서 iloader가 파일을 읽고 쓸 수 있는 권한이 있는지 확인하십시오."
+        "시스템에서 Side Installer가 파일을 읽고 쓸 수 있는 권한이 있는지 확인하십시오."
       ],
       "not_enough_app_ids": [
         "이 앱을 설치할 수 있는 앱 ID가 충분하지 않습니다.",

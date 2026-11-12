@@ -44,7 +44,7 @@
     "must_be_logged_in": "Muesch agmäldet sii!",
     "must_select_device": "Muesch es Grät uswähle!",
     "ipa_files": "IPA-Dateie",
-    "logo_alt": "iloader-Logo"
+    "logo_alt": "Side Installer-Logo"
   },
   "apple_id": {
     "title": "Apple-ID",
@@ -75,7 +75,7 @@
     "valid_6digit": "Bitte gib en gültige 6-stellige Code i.",
     "submit": "Absende",
     "max_certs_title": "Maximali Anzahl Zertifikat erreicht",
-    "max_certs_desc": "iloader wird dini bestehende Zertifikat widerrüefe und es neus erstelle.",
+    "max_certs_desc": "Side Installer wird dini bestehende Zertifikat widerrüefe und es neus erstelle.",
     "hide_certificate_list": "Zertifikatsliste usblände",
     "choose_what_to_revoke": "Wähl us, was widerrüefe werde söll",
     "continue": "Wiiter",
@@ -197,7 +197,7 @@
     "stored_rppairing_deleted_success": "Gspeicherets Pairing erfolgreich glöscht!",
     "failed_delete_stored_rppairing": "Gspeicherets Pairing het nöd chöne glöscht werde",
     "dont_use_keyring": "Keyring nöd verwände",
-    "dont_use_keyring_message": "Dadurch wird iloader weniger sicher, will Pairing-Dateie, de Anisette-Status und Zertifikat uf de Festplatte gspeicheret werde. Aktivier die Option nume, wenn de standardmässige Keyring-Speicher nöd funktioniert und du d Risike versteisch."
+    "dont_use_keyring_message": "Dadurch wird Side Installer weniger sicher, will Pairing-Dateie, de Anisette-Status und Zertifikat uf de Festplatte gspeicheret werde. Aktivier die Option nume, wenn de standardmässige Keyring-Speicher nöd funktioniert und du d Risike versteisch."
   },
   "dialog": {
     "confirm": "Bestätige",
@@ -266,7 +266,7 @@
         "Versuech, d App mit erhöhte Berechtige (als Administrator/Root) uszfüehre."
       ],
       "filesystem": [
-        "Stell sicher, dass iloader d Berechtigung het, Dateie uf dim System z läse und z schriibe."
+        "Stell sicher, dass Side Installer d Berechtigung het, Dateie uf dim System z läse und z schriibe."
       ],
       "not_enough_app_ids": [
         "Du hesch nöd gnueg App-IDs zur Verfüegig, zum die App z installiere.",

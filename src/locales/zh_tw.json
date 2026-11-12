@@ -45,7 +45,7 @@
     "must_be_logged_in": "您必須登入！",
     "must_select_device": "您必須選擇一台裝置！",
     "ipa_files": "IPA 檔案",
-    "logo_alt": "iloader 標誌"
+    "logo_alt": "Side Installer 標誌"
   },
   "apple_id": {
     "title": "Apple ID",
@@ -76,7 +76,7 @@
     "valid_6digit": "請輸入有效的 6 位數字驗證碼。",
     "submit": "提交",
     "max_certs_title": "已達到憑證數量上限",
-    "max_certs_desc": "iloader 將撤銷您現有的憑證並產生一個新的。",
+    "max_certs_desc": "Side Installer 將撤銷您現有的憑證並產生一個新的。",
     "hide_certificate_list": "隱藏憑證列表",
     "choose_what_to_revoke": "選擇要撤銷的內容",
     "continue": "繼續",
@@ -198,7 +198,7 @@
     "stored_rppairing_deleted_success": "已成功刪除儲存的配對！",
     "failed_delete_stored_rppairing": "刪除已儲存的配對失敗",
     "dont_use_keyring": "不使用鑰匙圈",
-    "dont_use_keyring_message": "這會將配對檔案、Anisette 狀態和憑證儲存在磁碟上，從而降低 iloader 的安全性。只有在預設的鑰匙圈儲存無法運作且您了解相關風險時，才啟用此選項。"
+    "dont_use_keyring_message": "這會將配對檔案、Anisette 狀態和憑證儲存在磁碟上，從而降低 Side Installer 的安全性。只有在預設的鑰匙圈儲存無法運作且您了解相關風險時，才啟用此選項。"
   },
   "dialog": {
     "confirm": "確認",
@@ -263,7 +263,7 @@
         "請嘗試以提升的權限（作為系統管理員/root）執行應用程式。"
       ],
       "filesystem": [
-        "請確保 iloader 有權限在您的系統上讀取和寫入檔案。"
+        "請確保 Side Installer 有權限在您的系統上讀取和寫入檔案。"
       ],
       "not_enough_app_ids": [
         "您沒有足夠的 App ID 可用來安裝此應用程式。",

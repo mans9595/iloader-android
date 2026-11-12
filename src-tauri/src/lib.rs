@@ -59,7 +59,7 @@ pub fn run() {
 
             let file_appender = tracing_appender::rolling::RollingFileAppender::builder()
                 .rotation(tracing_appender::rolling::Rotation::DAILY)
-                .filename_prefix("iloader")
+                .filename_prefix("side-installer")
                 .filename_suffix("log")
                 .max_log_files(2)
                 .build(&log_dir)
@@ -161,7 +161,7 @@ mod android_jni {
     use crate::android_usbmuxd;
 
     #[unsafe(no_mangle)]
-    pub extern "system" fn Java_com_mans_iloaderandroid_MainActivity_nativeUsbAttached<'local>(
+    pub extern "system" fn Java_com_mans_sideinstaller_MainActivity_nativeUsbAttached<'local>(
         mut env: JNIEnv<'local>,
         _this: JObject<'local>,
         fd: jint,
@@ -173,7 +173,7 @@ mod android_jni {
     }
 
     #[unsafe(no_mangle)]
-    pub extern "system" fn Java_com_mans_iloaderandroid_MainActivity_nativeUsbDetached<'local>(
+    pub extern "system" fn Java_com_mans_sideinstaller_MainActivity_nativeUsbDetached<'local>(
         _env: JNIEnv<'local>,
         _this: JObject<'local>,
     ) {
@@ -181,7 +181,7 @@ mod android_jni {
     }
 
     #[unsafe(no_mangle)]
-    pub extern "system" fn Java_com_mans_iloaderandroid_MainActivity_nativeUsbState<'local>(
+    pub extern "system" fn Java_com_mans_sideinstaller_MainActivity_nativeUsbState<'local>(
         _env: JNIEnv<'local>,
         _this: JObject<'local>,
     ) -> jint {

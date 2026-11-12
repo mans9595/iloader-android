@@ -44,7 +44,7 @@
     "must_be_logged_in": "Você precisa estar logado!",
     "must_select_device": "Você precisa selecionar um dispositivo!",
     "ipa_files": "Arquivos IPA",
-    "logo_alt": "logo do iLoader"
+    "logo_alt": "logo do Side Installer"
   },
   "apple_id": {
     "title": "Apple ID",
@@ -75,7 +75,7 @@
     "valid_6digit": "Por favror insira um código de 6 dígitos válido.",
     "submit": "Enviar",
     "max_certs_title": "Limite de certificados alcançado",
-    "max_certs_desc": "iloader irá anular quaiquer certificados já existentes e gerar um novo.",
+    "max_certs_desc": "Side Installer irá anular quaiquer certificados já existentes e gerar um novo.",
     "hide_certificate_list": "Esconder lista de certificados",
     "choose_what_to_revoke": "Escolha o que anular",
     "continue": "Continuar",
@@ -197,7 +197,7 @@
     "stored_rppairing_deleted_success": "Pareamento armazenado apagado com sucesso!",
     "failed_delete_stored_rppairing": "Pareamento armazenado não foi apagado",
     "dont_use_keyring": "Não usar keyrinng",
-    "dont_use_keyring_message": "Isso deixa iloader menos seguro armazenando pareamentos, estados anisette, e certificados no seu computador. Apenas ative se o armazenamento keyring não está funcionando e você compreende os riscos."
+    "dont_use_keyring_message": "Isso deixa Side Installer menos seguro armazenando pareamentos, estados anisette, e certificados no seu computador. Apenas ative se o armazenamento keyring não está funcionando e você compreende os riscos."
   },
   "dialog": {
     "confirm": "Confirmar",
@@ -256,13 +256,13 @@
         "Tente ativar \"Não usar keyring\" nos ajustes para resolver o problema. Esse procedimento é menos seguro."
       ],
       "misc": [
-        "Tente novamente. Reiniciar iLoader, seu celular e seu computador pode contribuir para resolver o problema."
+        "Tente novamente. Reiniciar Side Installer, seu celular e seu computador pode contribuir para resolver o problema."
       ],
       "admin": [
-        "Tente executar iLoader (como administrador/root)."
+        "Tente executar Side Installer (como administrador/root)."
       ],
       "filesystem": [
-        "Certifique-se que iloader tem permissões para ler e modificar arquivos no seu sistema."
+        "Certifique-se que Side Installer tem permissões para ler e modificar arquivos no seu sistema."
       ],
       "not_enough_app_ids": [
         "Voce não tem IDs de Aplicativo suficientes para instalar este aplicativo.",
@@ -280,7 +280,7 @@
   "update": {
     "new_version_available": "Uma nova versão está disponível: {{version}}. Deseja atualizar?",
     "updating": "Atualizando...",
-    "downloaded_restarting": "Nova versão instalada! Reiniciando iLoader...",
+    "downloaded_restarting": "Nova versão instalada! Reiniciando Side Installer...",
     "failed_download": "Instalação foi falha: {{error}}"
   }
 }

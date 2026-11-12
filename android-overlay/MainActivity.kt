@@ -1,4 +1,4 @@
-package com.mans.iloaderandroid
+package com.mans.sideinstaller
 
 import android.app.PendingIntent
 import android.content.BroadcastReceiver
@@ -23,7 +23,7 @@ import androidx.core.content.ContextCompat
  */
 class MainActivity : TauriActivity() {
   companion object {
-    private const val TAG = "iloaderUsb"
+    private const val TAG = "SideInstallerUsb"
     private const val APPLE_VENDOR_ID = 0x05AC
     private const val POLL_INTERVAL_MS = 2000L
     private const val RETRY_AFTER_FAILURE_MS = 6000L

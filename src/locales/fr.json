@@ -44,7 +44,7 @@
     "must_be_logged_in": "Vous devez être connecté !",
     "must_select_device": "Vous devez sélectionner un appareil !",
     "ipa_files": "Fichiers IPA",
-    "logo_alt": "Logo iloader"
+    "logo_alt": "Logo Side Installer"
   },
   "apple_id": {
     "title": "Identifiant Apple",
@@ -75,7 +75,7 @@
     "valid_6digit": "Veuillez saisir un code valide à 6 chiffres.",
     "submit": "Soumettre",
     "max_certs_title": "Nombre maximum de certificats atteint",
-    "max_certs_desc": "iloader révoquera vos certificats existants et en générera un nouveau.",
+    "max_certs_desc": "Side Installer révoquera vos certificats existants et en générera un nouveau.",
     "hide_certificate_list": "Masquer la liste des certificats",
     "choose_what_to_revoke": "Choisir quoi révoquer",
     "continue": "Continuer",
@@ -197,7 +197,7 @@
     "stored_rppairing_deleted_success": "Jumelage enregistré supprimé avec succès !",
     "failed_delete_stored_rppairing": "Échec de la suppression du jumelage enregistré",
     "dont_use_keyring": "Ne pas utiliser le trousseau",
-    "dont_use_keyring_message": "Cela rend iloader moins sécurisé en stockant les fichiers de jumelage, l'état d'Anisette et les certificats sur le disque. N'activez ceci que si le stockage par défaut via le trousseau ne fonctionne pas et que vous comprenez les risques encourus."
+    "dont_use_keyring_message": "Cela rend Side Installer moins sécurisé en stockant les fichiers de jumelage, l'état d'Anisette et les certificats sur le disque. N'activez ceci que si le stockage par défaut via le trousseau ne fonctionne pas et que vous comprenez les risques encourus."
   },
   "dialog": {
     "confirm": "Confirmer",
@@ -262,7 +262,7 @@
         "Essayez de lancer l'application avec des permissions élevées (en tant qu'administrateur/root)."
       ],
       "filesystem": [
-        "Assurez-vous qu'iloader dispose des permissions nécessaires pour lire et écrire des fichiers sur votre système."
+        "Assurez-vous qu'Side Installer dispose des permissions nécessaires pour lire et écrire des fichiers sur votre système."
       ],
       "not_enough_app_ids": [
         "Vous ne disposez pas de suffisamment d'identifiants d'application pour installer cette application.",

@@ -45,7 +45,7 @@
     "must_be_logged_in": "You must be logged in!",
     "must_select_device": "You must select a device!",
     "ipa_files": "IPA Files",
-    "logo_alt": "iloader logo"
+    "logo_alt": "Side Installer logo"
   },
   "apple_id": {
     "title": "Apple ID",
@@ -76,7 +76,7 @@
     "valid_6digit": "Please enter a valid 6-digit code.",
     "submit": "Submit",
     "max_certs_title": "Maximum certificates reached",
-    "max_certs_desc": "iloader will revoke your existing certificates and generate a new one.",
+    "max_certs_desc": "Side Installer will revoke your existing certificates and generate a new one.",
     "hide_certificate_list": "Hide certificate list",
     "choose_what_to_revoke": "Choose what to revoke",
     "continue": "Continue",
@@ -198,7 +198,7 @@
     "stored_rppairing_deleted_success": "Stored pairing deleted successfully!",
     "failed_delete_stored_rppairing": "Failed to delete stored pairing",
     "dont_use_keyring": "Don't use keyring",
-    "dont_use_keyring_message": "This makes iloader less secure by storing pairing files, anisette state, and certificates on disk. Enable this only if the default keyring storage doesn't work and you understand the risks."
+    "dont_use_keyring_message": "This makes Side Installer less secure by storing pairing files, anisette state, and certificates on disk. Enable this only if the default keyring storage doesn't work and you understand the risks."
   },
   "dialog": {
     "confirm": "Confirm",
@@ -263,7 +263,7 @@
         "Try running the app with elevated permissions (as administrator/root)."
       ],
       "filesystem": [
-        "Make sure iloader has permission to read and write files on your system."
+        "Make sure Side Installer has permission to read and write files on your system."
       ],
       "not_enough_app_ids": [
         "You do not have enough App IDs available to install this app.",

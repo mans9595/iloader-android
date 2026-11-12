@@ -44,7 +44,7 @@
     "must_be_logged_in": "Devi eseguire l'accesso!",
     "must_select_device": "Devi selezionare un dispositivo!",
     "ipa_files": "File IPA",
-    "logo_alt": "iloader logo"
+    "logo_alt": "Side Installer logo"
   },
   "apple_id": {
     "title": "Apple ID",
@@ -75,7 +75,7 @@
     "valid_6digit": "Inserisci un codice a 6 cifre valido.",
     "submit": "Invia",
     "max_certs_title": "Raggiunto numero massimo di certificati",
-    "max_certs_desc": "iloader revocherà i certificati esistenti e ne genererà uno nuovo.",
+    "max_certs_desc": "Side Installer revocherà i certificati esistenti e ne genererà uno nuovo.",
     "hide_certificate_list": "Nascondi lista certificati",
     "choose_what_to_revoke": "Scegli quale revocare",
     "continue": "Continua"
@@ -191,7 +191,7 @@
     "stored_rppairing_deleted_success": "File pairing memorizzati eliminati correttamente!",
     "failed_delete_stored_rppairing": "Errore durante l'eliminazione dei file di pairing memorizzati.",
     "dont_use_keyring": "Non usare Keyring",
-    "dont_use_keyring_message": "Questo rende iloader meno sicuro per memorizzare i pairing file, stato Anisette, e certificati sul disco. Abilita l'opzione solo se il Keyring di default non funziona e comprendi i rischi."
+    "dont_use_keyring_message": "Questo rende Side Installer meno sicuro per memorizzare i pairing file, stato Anisette, e certificati sul disco. Abilita l'opzione solo se il Keyring di default non funziona e comprendi i rischi."
   },
   "dialog": {
     "confirm": "Conferma",
@@ -257,7 +257,7 @@
         "Prova ad eseguire l'app con maggior permessi (come amministratore/root)."
       ],
       "filesystem": [
-        "Controlla che iloader ha il permesso di scrivere e leggere file sul tuo sistema."
+        "Controlla che Side Installer ha il permesso di scrivere e leggere file sul tuo sistema."
       ],
       "not_enough_app_ids": [
         "Non hai abbastanza App IDs disponibili per installare quest'app.",

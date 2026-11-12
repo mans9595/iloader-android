@@ -44,7 +44,7 @@
     "must_be_logged_in": "Musisz być zalogowany!",
     "must_select_device": "Musisz wybrać urządzenie!",
     "ipa_files": "Pliki IPA",
-    "logo_alt": "logo iloader"
+    "logo_alt": "logo Side Installer"
   },
   "apple_id": {
     "title": "Apple ID",
@@ -75,7 +75,7 @@
     "valid_6digit": "Wprowadź prawidłowy 6-cyfrowy kod.",
     "submit": "Wyślij",
     "max_certs_title": "Osiągnięto maksymalną liczbę certyfikatów",
-    "max_certs_desc": "iloader unieważni Twoje istniejące certyfikaty i wygeneruje nowy.",
+    "max_certs_desc": "Side Installer unieważni Twoje istniejące certyfikaty i wygeneruje nowy.",
     "hide_certificate_list": "Ukryj listę certyfikatów",
     "choose_what_to_revoke": "Wybierz, co unieważnić",
     "continue": "Kontynuuj",
@@ -197,7 +197,7 @@
     "stored_rppairing_deleted_success": "Zapisane parowanie zostało pomyślnie usunięte!",
     "failed_delete_stored_rppairing": "Nie udało się usunąć zapisanego parowania",
     "dont_use_keyring": "Nie używaj keyringu",
-    "dont_use_keyring_message": "To zmniejsza bezpieczeństwo iloadera, ponieważ pliki parowania, stan Anisette i certyfikaty będą zapisywane na dysku. Włącz to tylko wtedy, gdy domyślne przechowywanie w keyringu nie działa i rozumiesz ryzyko."
+    "dont_use_keyring_message": "To zmniejsza bezpieczeństwo Side Installera, ponieważ pliki parowania, stan Anisette i certyfikaty będą zapisywane na dysku. Włącz to tylko wtedy, gdy domyślne przechowywanie w keyringu nie działa i rozumiesz ryzyko."
   },
   "dialog": {
     "confirm": "Potwierdź",
@@ -262,7 +262,7 @@
         "Spróbuj uruchomić aplikację z podwyższonymi uprawnieniami (administrator/root)."
       ],
       "filesystem": [
-        "Upewnij się, że iloader ma uprawnienia do odczytu i zapisu plików w systemie."
+        "Upewnij się, że Side Installer ma uprawnienia do odczytu i zapisu plików w systemie."
       ],
       "not_enough_app_ids": [
         "Nie masz wystarczającej liczby dostępnych ID aplikacji, aby zainstalować tę aplikację.",

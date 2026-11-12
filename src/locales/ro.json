@@ -44,7 +44,7 @@
     "must_be_logged_in": "Trebuie să fii autentificat!",
     "must_select_device": "Trebuie să selectezi un dispozitiv!",
     "ipa_files": "Fișiere IPA",
-    "logo_alt": "logo-ul iloader"
+    "logo_alt": "logo-ul Side Installer"
   },
   "apple_id": {
     "title": "Apple ID",
@@ -75,7 +75,7 @@
     "valid_6digit": "Introdu un cod valid din 6 cifre.",
     "submit": "Trimite",
     "max_certs_title": "S-a atins numărul maxim de certificate",
-    "max_certs_desc": "iloader va revoca certificatele existente și va genera unul nou.",
+    "max_certs_desc": "Side Installer va revoca certificatele existente și va genera unul nou.",
     "hide_certificate_list": "Ascunde lista de certificate",
     "choose_what_to_revoke": "Alege ce să fie revocat",
     "continue": "Continuă",
@@ -197,7 +197,7 @@
     "stored_rppairing_deleted_success": "Asocierea salvată a fost ștearsă cu succes!",
     "failed_delete_stored_rppairing": "Ștergerea asocierii salvate a eșuat",
     "dont_use_keyring": "Nu folosi keyring",
-    "dont_use_keyring_message": "Aceasta face iloader mai puțin sigur prin stocarea fișierelor de asociere, a stării anisette și a certificatelor pe disc. Activează această opțiune doar dacă stocarea implicită în keyring nu funcționează și înțelegi riscurile."
+    "dont_use_keyring_message": "Aceasta face Side Installer mai puțin sigur prin stocarea fișierelor de asociere, a stării anisette și a certificatelor pe disc. Activează această opțiune doar dacă stocarea implicită în keyring nu funcționează și înțelegi riscurile."
   },
   "dialog": {
     "confirm": "Confirmă",
@@ -262,7 +262,7 @@
         "Încearcă să rulezi aplicația cu permisiuni elevate (ca administrator/root)."
       ],
       "filesystem": [
-        "Asigură-te că iloader are permisiunea de a citi și scrie fișiere pe sistemul tău."
+        "Asigură-te că Side Installer are permisiunea de a citi și scrie fișiere pe sistemul tău."
       ],
       "not_enough_app_ids": [
         "Nu ai suficiente ID-uri de aplicații disponibile pentru a instala această aplicație.",

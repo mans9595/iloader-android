@@ -44,7 +44,7 @@
     "must_be_logged_in": "你一定要登入！",
     "must_select_device": "你一定要揀返部裝置！",
     "ipa_files": "IPA 檔案",
-    "logo_alt": "iloader 標誌"
+    "logo_alt": "Side Installer 標誌"
   },
   "apple_id": {
     "title": "Apple ID",
@@ -75,7 +75,7 @@
     "valid_6digit": "請輸入 6 位數字嘅有效驗證碼。",
     "submit": "提交",
     "max_certs_title": "憑證數量上限",
-    "max_certs_desc": "iloader 會撤銷你現有嘅憑證，再產生一個新嘅。",
+    "max_certs_desc": "Side Installer 會撤銷你現有嘅憑證，再產生一個新嘅。",
     "hide_certificate_list": "收埋憑證列表",
     "choose_what_to_revoke": "揀要撤銷嘅嘢",
     "continue": "繼續"

@@ -44,7 +44,7 @@
     "must_be_logged_in": "Daxil olmalısınız!",
     "must_select_device": "Bir cihaz seçməlisiniz!",
     "ipa_files": "IPA Faylları",
-    "logo_alt": "iloader loqosu"
+    "logo_alt": "Side Installer loqosu"
   },
   "apple_id": {
     "title": "Apple ID",
@@ -75,7 +75,7 @@
     "valid_6digit": "Zəhmət olmasa etibarlı 6 rəqəmli kod daxil edin.",
     "submit": "Göndər",
     "max_certs_title": "Maksimum sertifikat sayına çatıldı",
-    "max_certs_desc": "iloader mövcud sertifikatlarınızı ləğv edib yeni bir sertifikat yaradacaq.",
+    "max_certs_desc": "Side Installer mövcud sertifikatlarınızı ləğv edib yeni bir sertifikat yaradacaq.",
     "hide_certificate_list": "Sertifikat siyahısını gizlət",
     "choose_what_to_revoke": "Nəyi ləğv etmək istədiyinizi seçin",
     "continue": "Davam et",
@@ -197,7 +197,7 @@
     "stored_rppairing_deleted_success": "Saxlanılmış cütləşmə uğurla silindi!",
     "failed_delete_stored_rppairing": "Saxlanılmış cütləşmə silinə bilmədi",
     "dont_use_keyring": "Açar zəncirindən istifadə etmə",
-    "dont_use_keyring_message": "Bu seçim cütləşmə fayllarını, anisette vəziyyətini və sertifikatları diskdə saxladığından iloader-i daha az təhlükəsiz edir. Yalnız standart açar zənciri işləmədikdə və riskləri anladığınızda aktivləşdirin."
+    "dont_use_keyring_message": "Bu seçim cütləşmə fayllarını, anisette vəziyyətini və sertifikatları diskdə saxladığından Side Installer-i daha az təhlükəsiz edir. Yalnız standart açar zənciri işləmədikdə və riskləri anladığınızda aktivləşdirin."
   },
   "dialog": {
     "confirm": "Təsdiq",
@@ -262,7 +262,7 @@
         "Tətbiqi yüksəldilmiş icazələrlə (administrator/root olaraq) işlətməyə cəhd edin."
       ],
       "filesystem": [
-        "iloader-in sisteminizdə fayl oxuma və yazma icazəsinə sahib olduğundan əmin olun."
+        "Side Installer-in sisteminizdə fayl oxuma və yazma icazəsinə sahib olduğundan əmin olun."
       ],
       "not_enough_app_ids": [
         "Bu tətbiqi quraşdırmaq üçün kifayət qədər tətbiq ID-niz yoxdur.",
